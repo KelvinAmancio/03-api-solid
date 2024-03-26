@@ -11,6 +11,7 @@
         "no-multi-spaces": "error",
         "no-trailing-spaces": "error",
         "semi": "error",
+        "no-useless-constructor": "off",
         "prettier/prettier": [
             "error",
             {
