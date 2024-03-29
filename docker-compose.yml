@@ -1,4 +1,14 @@
 services:
+  api-solid-ts:
+    build:
+      context: .
+      target: dev
+    ports:
+      - "3333:3333"
+      - "9229:9229"
+    volumes:
+      - .:/app
+
   api-solid-pg:
     image: bitnami/postgresql
     ports:
