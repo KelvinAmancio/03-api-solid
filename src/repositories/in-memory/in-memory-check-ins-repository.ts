@@ -43,7 +43,7 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
         return checkIn
     }
 
-    private getUserCheckins(userId: string): CheckIn[] {
+    private getUserCheckins(userId: string) {
         return this.items.filter(checkIn => checkIn.user_id === userId)
     }
 }
