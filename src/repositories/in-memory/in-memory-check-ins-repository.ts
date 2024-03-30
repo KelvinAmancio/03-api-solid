@@ -22,9 +22,11 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
     }
 
     async findManyByUserId(userId: string, page: number): Promise<CheckIn[]> {
-        return this.items
-            .filter(checkIn => checkIn.user_id === userId)
-            .slice((page - 1) * 20, page * 20)
+        return this.getUserCheckins(userId).slice((page - 1) * 20, page * 20)
+    }
+
+    async countByUserId(userId: string): Promise<number> {
+        return this.getUserCheckins(userId).length
     }
 
     async create(data: Prisma.CheckInUncheckedCreateInput) {
@@ -39,5 +41,9 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
         this.items.push(checkIn)
 
         return checkIn
+    }
+
+    private getUserCheckins(userId: string): CheckIn[] {
+        return this.items.filter(checkIn => checkIn.user_id === userId)
     }
 }
