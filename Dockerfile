@@ -6,6 +6,7 @@ ENV NODE_ENV=production
 WORKDIR /app
 COPY package*.json ./
 RUN apt-get update -y && apt-get install -y openssl
+RUN npm install -g npm
 RUN npm ci && npm cache clean --force
 ENV PATH /app/node_modules/.bin:$PATH
 
