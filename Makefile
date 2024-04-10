@@ -6,6 +6,8 @@ down:
 	docker compose down
 exec:
 	docker compose exec api-solid-ts bash
+install:
+	docker compose run api-solid-ts npm i $(package)
 migrate:
 	docker compose run api-solid-ts npx prisma migrate dev
 test:
