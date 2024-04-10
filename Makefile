@@ -18,3 +18,5 @@ test-watch:
 	docker compose run api-solid-ts npm run test:watch
 test-e2e:
 	docker compose run api-solid-ts npm run test:e2e
+test-e2e-watch:
+	docker compose run api-solid-ts npm run test:e2e:watch
