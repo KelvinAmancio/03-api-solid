@@ -14,6 +14,9 @@ migrate:
 	docker compose run api-solid-ts npx prisma migrate dev
 test:
 	docker compose run api-solid-ts npm run test
+test-all:
+	docker compose run api-solid-ts npm run test
+	docker compose run api-solid-ts npm run test:e2e
 test-coverage:
 	docker compose run api-solid-ts npm run test:coverage
 test-watch:
